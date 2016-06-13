@@ -2,7 +2,20 @@ var myapp = angular.module("myapp", [])
 
 var myapp2 = angular.module("superhero", [])
 var myapp3 = angular.module("behaviorApp", [])
+var myapp4 = angular.module("twitterApp", [])
 
+myapp4.controller("appController", function($scope){
+	$scope.loadMoreTweets = function () {
+		alert("Loading more tweets!");
+	}
+})
+myapp4.directive("enter", function(){
+	return function(scope,element,attrs){
+	element.bind("mouseenter",function(){
+		scope.$apply(attrs.enter);
+	})
+	}
+})
 
 myapp3.directive("enter", function () {
 		
