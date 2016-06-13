@@ -1,7 +1,37 @@
-var myapp = angular.module("myapp", []);
+var myapp = angular.module("myapp", [])
 
 var myapp2 = angular.module("superhero", [])
+var myapp3 = angular.module("behaviorApp", [])
 
+
+myapp3.directive("enter", function () {
+		
+		return function (scope,element) {
+			element.bind("mouseenter",function(){
+				console.log("Im inside of you!");
+			})
+			
+		}
+		
+	}
+
+
+)
+
+
+myapp3.directive("leave", function () {
+
+		return function (scope,element) {
+			element.bind("mouseleave",function(){
+				console.log("Im leaving of you!");
+			})
+
+		}
+
+	}
+
+
+)
 myapp2.directive("superman",function(){
 		return {
 			restrict: "E",
